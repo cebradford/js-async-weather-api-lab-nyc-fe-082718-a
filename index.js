@@ -1,4 +1,5 @@
-const API_KEY = "YOUR API KEY"
+const API_KEY = "&APPID=7ab474c322461f7e3745511a804dc83e"
+const url = "https://api.openweathermap.org/data/2.5/weather?q="
 
 function handleFormSubmit(event) {
   //handle submit event
@@ -6,6 +7,9 @@ function handleFormSubmit(event) {
 
 function fetchCurrentWeather(city) {
   //fetch current weather based on city
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=` + city + '&APPID=7ab474c322461f7e3745511a804dc83e')
+  .then(response => response.json())
+  .then(json => console.log(json))
 }
 
 function displayCurrentWeather(json) {
